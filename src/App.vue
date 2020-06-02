@@ -1,32 +1,56 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <div id="nav">
+            <router-link to="/">Home</router-link> 
+            <router-link to="/about">About</router-link>
+            <router-link to="/contact">Contact</router-link> 
+            <router-link to="/team">Team</router-link>
+            <router-link to="/register" v-bind:class="auth">Register</router-link>
+            <router-link to="/login" v-bind:class="auth">Login</router-link>
+        </div> 
+        <router-view/>
     </div>
-    <router-view/>
-  </div>
 </template>
 
+<script>
+    export default {
+        data() {
+            return {
+                auth: 'auth-links'
+            }
+        }
+    }
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 #nav {
-  padding: 30px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    padding: 20px;
+    background-color: #808080;
 }
 
 #nav a {
-  font-weight: bold;
-  color: #2c3e50;
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+    color: #80bfff;
+}
+
+#nav a:hover {
+    color: #b8b894;
+}
+
+.auth-links {
+    float: right;
 }
 </style>
