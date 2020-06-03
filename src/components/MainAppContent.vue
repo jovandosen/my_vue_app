@@ -11,3 +11,13 @@
         name: "MainAppContent"
     }
 </script>
+
+<style scoped>
+.content-title {
+    background-color: #808080;
+}  
+
+.content-title h3 {
+    color: white;
+}  
+</style>
