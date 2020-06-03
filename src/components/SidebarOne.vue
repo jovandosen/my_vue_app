@@ -1,19 +1,19 @@
 <template>
     <div class="sidebar-one">
         <div class="sidebar-one-title">
-            <h3>My Vue App</h3>
+            <h3 v-bind:class="appNameStyle">My Vue App</h3>
         </div>
         <div id="sidebar-one-body">
             <ul>
-                <li v-for="link in links" v-bind:key="link.id">
-                    <a v-bind:href="link.url" v-bind:target="link.target">{{ link.text }}</a>
-                </li>
+                <Link v-for="link in links" v-bind:link="link" v-bind:key="link.id" />
             </ul>
         </div>        
     </div>
 </template>
 
 <script>
+    import Link from './Link.vue'
+
     export default {
         name: "SidebarOne",
         data() {
@@ -29,8 +29,12 @@
                     { id: 8, text: 'Wordpress', url: 'https://developer.wordpress.org/', target: '_blank' },
                     { id: 9, text: 'Bootstrap', url: 'https://getbootstrap.com/', target: '_blank' },
                     { id: 10, text: 'Vue', url: 'https://vuejs.org/', target: '_blank' }
-                ]
+                ],
+                appNameStyle: 'animate__animated animate__flipInX'
             }
+        },
+        components: {
+            Link
         }
     }
 </script>
@@ -49,21 +53,5 @@
 
 #sidebar-one-body ul {
     list-style-type: none;
-}
-
-#sidebar-one-body ul li {
-    padding-bottom: 5px;
-}
-
-#sidebar-one-body ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-}
-
-#sidebar-one-body ul li a:hover {
-    color: black;
-    padding-left: 10px;
-    transition: 0.3s;
 }
 </style>
