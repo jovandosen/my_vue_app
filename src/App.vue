@@ -32,22 +32,27 @@
 #nav {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     font-size: 20px;
-    padding: 20px;
+    padding: 20px 0px 20px 20px;
     background-color: #808080;
 }
 
 #nav a {
     text-decoration: none;
     color: white;
-    margin-left: 20px;
+    margin-right: 20px; 
 }
 
 #nav a.router-link-exact-active {
     color: #80bfff;
+    border-bottom: 2px solid #80bfff;
 }
 
 #nav a:hover {
     color: #b8b894;
+}
+
+#nav a:active {
+    color: #ff8080;
 }
 
 .auth-links {
