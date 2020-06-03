@@ -1,17 +1,22 @@
 <template>
-    <div class="home">
-        <h1>This is Home page</h1>
-        <HelloWorld />
+    <div class="container">
+        <SidebarOne />
+        <MainAppContent />
+        <SidebarTwo />       
     </div>
 </template>
 
 <script>
-    import HelloWorld from '../components/HelloWorld.vue'
+    import SidebarOne from '../components/SidebarOne.vue'
+    import SidebarTwo from '../components/SidebarTwo.vue'
+    import MainAppContent from '../components/MainAppContent.vue'
 
     export default {
         name: "Home",
         components: {
-            HelloWorld
+            SidebarOne,
+            SidebarTwo,
+            MainAppContent
         }
     }
 </script>

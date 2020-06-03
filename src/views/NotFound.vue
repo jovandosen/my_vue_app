@@ -1,5 +1,22 @@
 <template>
-    <div class="not-found">
-        <h1>Page not found</h1>
+    <div class="container">
+        <SidebarOne />
+        <MainAppContent />
+        <SidebarTwo />       
     </div>
 </template>
+
+<script>
+    import SidebarOne from '../components/SidebarOne.vue'
+    import SidebarTwo from '../components/SidebarTwo.vue'
+    import MainAppContent from '../components/MainAppContent.vue'
+
+    export default {
+        name: "NotFound",
+        components: {
+            SidebarOne,
+            SidebarTwo,
+            MainAppContent
+        }
+    }
+</script>

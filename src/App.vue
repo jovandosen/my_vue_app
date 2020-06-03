@@ -58,4 +58,34 @@
 .auth-links {
     float: right;
 }
+
+.container {
+    width: 80%;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+
+.sidebar-one, .sidebar-two {
+    float: left;
+    width: 20%;
+    height: 780px;
+    border: 1px solid #808080;
+    background-color: #bfbfbf;
+} 
+
+.main-app-data {
+    float: left;
+    width: 60%;
+    height: 780px;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+}
+
+.content-title {
+    padding: 10px;
+    border-bottom: 1px solid #808080;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+} 
 </style>

@@ -1,5 +1,22 @@
 <template>
-    <div class="about">
-        <h1>This is an about page</h1>
+    <div class="container">
+        <SidebarOne />
+        <MainAppContent />
+        <SidebarTwo />       
     </div>
 </template>
+
+<script>
+    import SidebarOne from '../components/SidebarOne.vue'
+    import SidebarTwo from '../components/SidebarTwo.vue'
+    import MainAppContent from '../components/MainAppContent.vue'
+
+    export default {
+        name: "About",
+        components: {
+            SidebarOne,
+            SidebarTwo,
+            MainAppContent
+        }
+    }
+</script>
