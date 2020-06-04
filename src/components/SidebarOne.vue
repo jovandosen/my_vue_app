@@ -54,4 +54,8 @@
 #sidebar-one-body ul {
     list-style-type: none;
 }
+
+.sidebar-one-title h3 {
+    color: #3E86C0FF;
+}
 </style>

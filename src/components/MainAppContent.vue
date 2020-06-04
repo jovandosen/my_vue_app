@@ -1,14 +1,19 @@
 <template>
     <div class="main-app-data">
         <div class="content-title">
-            <h3>App Content</h3>
+            <h3 v-bind:class="appContentTitle">App Content</h3>
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: "MainAppContent"
+        name: "MainAppContent",
+        data() {
+            return {
+                appContentTitle: 'animate__animated animate__bounceInRight'
+            }
+        }
     }
 </script>
 
