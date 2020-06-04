@@ -16,12 +16,24 @@
                 <Comment v-for="comment in comments" v-bind:key="comment.id" v-bind:comment="comment" />
             </ul>
         </div>
+        <div id="sidebar-two-news-title">
+            <h3>Latest News</h3>
+        </div>
+        <div id="sidebar-two-news-content">
+            <ul>
+                <Detail v-for="detail in news" v-bind:key="detail.id" v-bind:detail="detail" />
+            </ul>
+        </div>
+        <div>
+            <img src="../assets/logo.png" alt="My Vue App Logo">
+        </div>
     </div>
 </template>
 
 <script>
     import Post from './Post.vue'
     import Comment from './Comment.vue'
+    import Detail from './Detail.vue'
 
     export default {
         name: "SidebarTwo",
@@ -40,12 +52,18 @@
                     { id: 3, postID: 2, userID: 2, text: 'This is comment three.' },
                     { id: 4, postID: 3, userID: 3, text: 'This is comment four.' },
                     { id: 5, postID: 4, userID: 4, text: 'This is comment five.' }
+                ],
+                news: [
+                    { id: 1, title: 'Test one', description: 'Test one description' },
+                    { id: 2, title: 'Test two', description: 'Test two description' },
+                    { id: 3, title: 'Test three', description: 'Test three description' }
                 ]
             }
         },
         components: {
             Post,
-            Comment
+            Comment,
+            Detail
         }
     }
 </script>
@@ -55,19 +73,19 @@
     text-align: center;
 }
 
-.sidebar-two-title, #sidebar-two-comments-title {
+.sidebar-two-title, #sidebar-two-comments-title, #sidebar-two-news-title {
     border-bottom: 1px solid #808080;
     padding: 10px;
-    color: white;
+    color: #007F0EFF;
     font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
-#sidebar-two-content, #sidebar-two-comments-content {
+#sidebar-two-content, #sidebar-two-comments-content, #sidebar-two-news-content {
     padding: 10px;
     border-bottom: 1px solid #808080;
 }
 
-#sidebar-two-content ul, #sidebar-two-comments-content ul {
+#sidebar-two-content ul, #sidebar-two-comments-content ul, #sidebar-two-news-content ul {
     list-style-type: none;
 }
 </style>

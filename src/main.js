@@ -7,9 +7,13 @@ Vue.config.productionTip = false
 Vue.filter('cut', function (value) {
     if (!value) return ''
     value = value.toString()
-    value = value.substring(0, 14)
-    value = value + '...'
-    return value
+    if( value.length >= 15 ) {
+        value = value.substring(0, 14)
+        value = value + '...'
+        return value
+    } else {
+        return value
+    }
 })
 
 new Vue({
