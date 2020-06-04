@@ -3,6 +3,9 @@
         <div class="content-title">
             <h3 v-bind:class="appContentTitle">App Content</h3>
         </div>
+        <div id="main-application-content">
+            {{ content }}
+        </div>
     </div>
 </template>
 
@@ -13,7 +16,8 @@
             return {
                 appContentTitle: 'animate__animated animate__bounceInRight'
             }
-        }
+        },
+        props: ["content"]
     }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <SidebarOne />
-        <MainAppContent />
+        <MainAppContent v-bind:content="content" />
         <SidebarTwo />       
     </div>
 </template>
@@ -17,6 +17,11 @@
             SidebarOne,
             SidebarTwo,
             MainAppContent
+        },
+        data() {
+            return {
+                content: "Page not Found."
+            }
         }
     }
 </script>
