@@ -7,6 +7,7 @@ import Team from '../views/Team.vue'
 import Register from '../views/Register.vue'
 import Login from '../views/Login.vue'
 import NotFound from '../views/NotFound.vue'
+import Gallery from '../views/Gallery.vue'
 
 Vue.use(VueRouter)
 
@@ -63,6 +64,14 @@ const routes = [
         path: '*',
         name: 'NotFound',
         component: NotFound
+    },
+    {
+        path: '/gallery',
+        name: 'Gallery',
+        meta: {
+            title: 'Gallery'
+        },
+        component: Gallery
     }
 ]
 

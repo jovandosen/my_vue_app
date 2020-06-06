@@ -11,7 +11,7 @@
             </div>
             <div id="home-page-content-two">
                 <div id="content-two-image">
-                    <img src="../assets/forest.jpg" alt="Forest">
+                    <img src="../assets/images/forest.jpg" alt="Forest">
                 </div>
                 <div id="content-two-text">
                     <div id="content-two-text-title">

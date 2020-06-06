@@ -5,6 +5,7 @@
             <router-link to="/about">About</router-link>
             <router-link to="/contact">Contact</router-link> 
             <router-link to="/team">Team</router-link>
+            <router-link to="/gallery">Gallery</router-link>
             <router-link to="/register" v-bind:class="auth">Register</router-link>
             <router-link to="/login" v-bind:class="auth">Login</router-link>
         </div> 
