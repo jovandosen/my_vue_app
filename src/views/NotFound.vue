@@ -1,8 +1,11 @@
 <template>
     <div class="container">
         <SidebarOne />
-        <MainAppContent v-bind:content="content" />
-        <SidebarTwo />       
+        <main-app-content>
+            <h3 v-bind:class="notFoundStyle">{{ content }}</h3>
+        </main-app-content>
+        <SidebarTwo />
+        <Footer />       
     </div>
 </template>
 
@@ -10,18 +13,25 @@
     import SidebarOne from '../components/SidebarOne.vue'
     import SidebarTwo from '../components/SidebarTwo.vue'
     import MainAppContent from '../components/MainAppContent.vue'
+    import Footer from '../components/Footer.vue'
 
     export default {
         name: "NotFound",
         components: {
             SidebarOne,
             SidebarTwo,
-            MainAppContent
+            MainAppContent,
+            Footer
         },
         data() {
             return {
-                content: "Page not Found."
+                content: "Sorry, Page not Found.",
+                notFoundStyle: "animate__animated animate__fadeInUp"
             }
         }
     }
 </script>
+
+<style scoped>
+
+</style>

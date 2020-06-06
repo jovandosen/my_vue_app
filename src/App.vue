@@ -88,4 +88,14 @@
     border-bottom: 1px solid #808080;
     font-family: Avenir, Helvetica, Arial, sans-serif;
 } 
+
+.footer {
+    border: 1px solid #808080;
+    color: white;
+    background-color: #808080;
+    text-align: center;
+    float: left;
+    width: 100%;
+    padding: 10px;
+}
 </style>

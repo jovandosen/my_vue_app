@@ -2,7 +2,8 @@
     <div class="container">
         <SidebarOne />
         <MainAppContent />
-        <SidebarTwo />       
+        <SidebarTwo />
+        <Footer />       
     </div>
 </template>
 
@@ -10,13 +11,15 @@
     import SidebarOne from '../components/SidebarOne.vue'
     import SidebarTwo from '../components/SidebarTwo.vue'
     import MainAppContent from '../components/MainAppContent.vue'
+    import Footer from '../components/Footer.vue'
 
     export default {
         name: "Team",
         components: {
             SidebarOne,
             SidebarTwo,
-            MainAppContent
+            MainAppContent,
+            Footer
         }
     }
 </script>
