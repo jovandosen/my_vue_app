@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <SidebarOne />
-        <main-app-content>
+        <main-app-content v-bind:componentTitle="componentTitle">
             <h3 v-bind:class="notFoundStyle">{{ content }}</h3>
         </main-app-content>
         <SidebarTwo />
@@ -26,7 +26,8 @@
         data() {
             return {
                 content: "Sorry, Page not Found.",
-                notFoundStyle: "animate__animated animate__fadeInUp"
+                notFoundStyle: "animate__animated animate__fadeInUp",
+                componentTitle: "Not Found"
             }
         }
     }

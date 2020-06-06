@@ -1,7 +1,7 @@
 <template>
     <div class="main-app-data">
         <div class="content-title">
-            <h3 v-bind:class="appContentTitle">App Content</h3>
+            <h3 v-bind:class="appContentTitle">App Content | {{ componentTitle }}</h3>
         </div>
         <div id="main-application-content">
             <slot></slot>
@@ -12,6 +12,7 @@
 <script>
     export default {
         name: "MainAppContent",
+        props: ["componentTitle"],
         data() {
             return {
                 appContentTitle: 'animate__animated animate__bounceInRight'

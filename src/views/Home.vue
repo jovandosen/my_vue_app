@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <SidebarOne />
-        <main-app-content>
+        <main-app-content v-bind:componentTitle="componentTitle">
             <div id="home-page-title">
                 <p>Welcome to Home page</p>
             </div>
@@ -39,6 +39,11 @@
             SidebarTwo,
             MainAppContent,
             Footer
+        },
+        data() {
+            return {
+                componentTitle: "Home"
+            }
         }
     }
 </script>

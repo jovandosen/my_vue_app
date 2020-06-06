@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <SidebarOne />
-        <MainAppContent />
+        <MainAppContent v-bind:componentTitle="componentTitle" />
         <SidebarTwo />   
         <Footer />    
     </div>
@@ -20,6 +20,11 @@
             SidebarTwo,
             MainAppContent,
             Footer
+        },
+        data() {
+            return {
+                componentTitle: "Contact"
+            }
         }
     }
 </script>
