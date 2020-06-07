@@ -3,11 +3,11 @@
         <SidebarOne />
         <main-app-content v-bind:componentTitle="componentTitle">
             <div id="gallery-box">
-                <img v-for="image in images" v-bind:key="image.id" v-bind:src="require('../assets/images/' + image.src)"  v-bind:alt="image.name">
+                <GalleryImage v-for="image in images" v-bind:key="image.id" v-bind:image="image" /> 
             </div>
         </main-app-content>
         <SidebarTwo /> 
-        <Footer />      
+        <Footer />     
     </div>
 </template>
 
@@ -16,6 +16,7 @@
     import SidebarTwo from '../components/SidebarTwo.vue'
     import MainAppContent from '../components/MainAppContent.vue'
     import Footer from '../components/Footer.vue'
+    import GalleryImage from '../components/Image.vue'
 
     export default {
         name: "Gallery",
@@ -23,7 +24,8 @@
             SidebarOne,
             SidebarTwo,
             MainAppContent,
-            Footer
+            Footer,
+            GalleryImage
         },
         data() {
             return {
@@ -46,9 +48,13 @@
 
 <style scoped>
 #gallery-box img {
-    width: 32%;
+    width: 33%;
     height: 200px;
-    margin-right: 8px;
-    margin-bottom: 5px;
-}    
+    margin-right: 2px;
+}
+
+#gallery-box img:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}   
 </style>
