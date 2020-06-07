@@ -7,6 +7,16 @@
             <ul>
                 <Link v-for="link in links" v-bind:link="link" v-bind:key="link.id" />
             </ul>
+        </div>
+        <div id="sidebar-one-links-title">
+            <h3>Read More</h3>
+        </div>
+        <div id="sidebar-one-links">
+            <ul>
+                <li>
+                    <router-link to="/posts">Posts</router-link>
+                </li>
+            </ul>
         </div>        
     </div>
 </template>
@@ -49,13 +59,44 @@
 
 #sidebar-one-body {
     padding: 10px;
+    border-bottom: 1px solid #808080;
 }
 
-#sidebar-one-body ul {
+#sidebar-one-body ul, #sidebar-one-links ul {
     list-style-type: none;
 }
 
 .sidebar-one-title h3 {
     color: #3E86C0FF;
+}
+
+#sidebar-one-links-title {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    border-bottom: 1px solid #808080;
+    padding: 10px;
+}
+
+#sidebar-one-links-title h3 {
+    color: #168EE8FF;
+}
+
+#sidebar-one-links {
+    padding: 10px;
+}
+
+#sidebar-one-links ul li {
+    padding-bottom: 5px;
+}
+
+#sidebar-one-links ul li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#sidebar-one-links ul li a:hover {
+    color: black;
+    padding-left: 10px;
+    transition: 0.3s;
 }
 </style>
