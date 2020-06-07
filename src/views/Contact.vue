@@ -52,6 +52,9 @@
                     <p><strong>Your Message is: </strong>{{ contactMessage | capitalize }}</p>
                 </div>
             </div>
+            <div id="contact-form-error-bag">
+                <ContactFormError v-for="error in errors" v-bind:key="error.id" v-bind:error="error" />
+            </div>
         </main-app-content>
         <SidebarTwo />   
         <Footer />    
@@ -63,6 +66,7 @@
     import SidebarTwo from '../components/SidebarTwo.vue'
     import MainAppContent from '../components/MainAppContent.vue'
     import Footer from '../components/Footer.vue'
+    import ContactFormError from '../components/ContactFormError.vue'
 
     export default {
         name: "Contact",
@@ -70,7 +74,8 @@
             SidebarOne,
             SidebarTwo,
             MainAppContent,
-            Footer
+            Footer,
+            ContactFormError
         },
         data() {
             return {
@@ -78,24 +83,36 @@
                 contactName: '',
                 contactEmail: '',
                 contactMessage: '',
-                errors: []
+                errors: [],
+                nameError: {},
+                emailError: {},
+                messageError: {}
             }
         },
         methods: {
             validateContactForm: function () {
-                if(this.contactName && this.contactEmail && this.contactMessage){
-                    return true;
-                }
+                this.errors = [];
                 if(!this.contactName){
-                    this.errors.push('Name field can not be empty.');
+                    this.nameError = { id: 1, message: 'Name field can not be empty.' };
+                    this.errors.push(this.nameError);
                 }
                 if(!this.contactEmail){
-                    this.errors.push('Email field can not be empty.');
+                    this.emailError = { id: 2, message: 'Email field can not be empty.' };
+                    this.errors.push(this.emailError);
+                } else {
+                    if(!this.validateEmail(this.contactEmail)) {
+                        this.emailError = { id: 2, message: 'Email is not valid.' };
+                        this.errors.push(this.emailError);
+                    }
                 }
                 if(!this.contactMessage){
-                    this.errors.push('Message field can not be empty.');
+                    this.messageError = { id: 3, message: 'Message field can not be empty.' };
+                    this.errors.push(this.messageError);
                 }
-                console.log(this.errors);
+            },
+            validateEmail: function (email) {
+                var data = /\S+@\S+\.\S+/;
+                return data.test(email);
             }
         },
         filters: {
@@ -153,6 +170,8 @@
 
 #contact-form-details {
     margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #808080;
 }
 
 #contact-form-name-detail, #contact-form-email-detail, #contact-form-message-detail {
