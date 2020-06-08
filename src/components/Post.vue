@@ -1,5 +1,5 @@
 <template>
-    <li><a>{{ post.title }}</a></li>
+    <li><router-link :to="{ name: 'Post', params: { post: this.post }}">{{ post.title }}</router-link></li>
 </template>
 
 <script>

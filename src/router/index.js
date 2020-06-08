@@ -10,6 +10,7 @@ import NotFound from '../views/NotFound.vue'
 import Gallery from '../views/Gallery.vue'
 import Posts from '../views/Posts.vue'
 import Users from '../views/Users.vue'
+import Post from '../views/Post.vue'
 
 Vue.use(VueRouter)
 
@@ -90,6 +91,14 @@ const routes = [
             title: 'Users'
         },
         component: Users
+    },
+    {
+        path: '/post',
+        name: 'Post',
+        meta: {
+            title: 'Post'
+        },
+        component: Post
     }
 ]
 
