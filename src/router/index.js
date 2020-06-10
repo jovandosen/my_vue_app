@@ -1,16 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Contact from '../views/Contact.vue'
-import About from '../views/About.vue'
-import Team from '../views/Team.vue'
-import Register from '../views/Register.vue'
-import Login from '../views/Login.vue'
-import NotFound from '../views/NotFound.vue'
-import Gallery from '../views/Gallery.vue'
-import Posts from '../views/Posts.vue'
-import Users from '../views/Users.vue'
-import Post from '../views/Post.vue'
 
 Vue.use(VueRouter)
 
@@ -21,7 +10,7 @@ const routes = [
         meta: {
             title: 'Home'
         },
-        component: Home
+        component: () => import(/* webpackChunkName: "Home" */ "../views/Home")
     },
     {
         path: '/about',
@@ -29,7 +18,7 @@ const routes = [
         meta: {
             title: 'About'
         },
-        component: About
+        component: () => import(/* webpackChunkName: "About" */ "../views/About")
     },
     {
         path: '/contact',
@@ -37,7 +26,7 @@ const routes = [
         meta: {
             title: 'Contact'
         },
-        component: Contact
+        component: () => import(/* webpackChunkName: "Contact" */ "../views/Contact")
     },
     {
         path: '/team',
@@ -45,7 +34,7 @@ const routes = [
         meta: {
             title: 'Team'
         },
-        component: Team
+        component: () => import(/* webpackChunkName: "Team" */ "../views/Team")
     },
     {
         path: '/register',
@@ -53,7 +42,7 @@ const routes = [
         meta: {
             title: 'Register'
         },
-        component: Register
+        component: () => import(/* webpackChunkName: "Register" */ "../views/Register")
     },
     {
         path: '/login',
@@ -61,12 +50,7 @@ const routes = [
         meta: {
             title: 'Login'
         },
-        component: Login
-    },
-    {
-        path: '*',
-        name: 'NotFound',
-        component: NotFound
+        component: () => import(/* webpackChunkName: "Login" */ "../views/Login")
     },
     {
         path: '/gallery',
@@ -74,7 +58,7 @@ const routes = [
         meta: {
             title: 'Gallery'
         },
-        component: Gallery
+        component: () => import(/* webpackChunkName: "Gallery" */ "../views/Gallery")
     },
     {
         path: '/posts',
@@ -82,7 +66,7 @@ const routes = [
         meta: {
             title: 'Posts'
         },
-        component: Posts
+        component: () => import(/* webpackChunkName: "Posts" */ "../views/Posts")
     },
     {
         path: '/users',
@@ -90,7 +74,7 @@ const routes = [
         meta: {
             title: 'Users'
         },
-        component: Users
+        component: () => import(/* webpackChunkName: "Users" */ "../views/Users")
     },
     {
         path: '/post',
@@ -98,7 +82,12 @@ const routes = [
         meta: {
             title: 'Post'
         },
-        component: Post
+        component: () => import(/* webpackChunkName: "Post" */ "../views/Post")
+    },
+    {
+        path: '*',
+        name: 'NotFound',
+        component: () => import(/* webpackChunkName: "NotFound" */ "../views/NotFound")
     }
 ]
 
