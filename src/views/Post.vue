@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <GoBack />
         <SidebarOne />
         <main-app-content v-bind:componentTitle="componentTitle">
             <div id="post-title">
@@ -22,6 +23,7 @@
     import SidebarTwo from '../components/SidebarTwo.vue'
     import MainAppContent from '../components/MainAppContent.vue'
     import Footer from '../components/Footer.vue'
+    import GoBack from '../components/GoBack.vue'
 
     export default {
         name: "Post",
@@ -29,7 +31,8 @@
             SidebarOne,
             SidebarTwo,
             MainAppContent,
-            Footer
+            Footer,
+            GoBack
         },
         data() {
             return {

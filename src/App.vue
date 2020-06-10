@@ -1,7 +1,9 @@
 <template>
     <div id="app">
-        <TheNavigation /> 
-        <router-view/>
+        <TheNavigation />
+        <transition name="fade" mode="out-in"> 
+            <router-view/>
+        </transition>
     </div>
 </template>
 
@@ -59,5 +61,11 @@
     float: left;
     width: 100%;
     padding: 10px;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.3s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
 }
 </style>

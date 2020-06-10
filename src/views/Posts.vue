@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <GoBack />
         <SidebarOne />
         <main-app-content v-bind:componentTitle="componentTitle">
             <table style="width: 100%">
@@ -21,6 +22,7 @@
     import Footer from '../components/Footer.vue'
     import PostsTableHeader from '../components/PostsTableHeader.vue'
     import PostsTableRows from '../components/PostsTableRows.vue'
+    import GoBack from '../components/GoBack.vue'
 
     export default {
         name: "Posts",
@@ -30,7 +32,8 @@
             MainAppContent,
             Footer,
             PostsTableHeader,
-            PostsTableRows
+            PostsTableRows,
+            GoBack
         },
         data() {
             return {

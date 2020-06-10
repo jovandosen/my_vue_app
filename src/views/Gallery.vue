@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <GoBack />
         <SidebarOne />
         <main-app-content v-bind:componentTitle="componentTitle">
             <div id="gallery-box">
@@ -17,6 +18,7 @@
     import MainAppContent from '../components/MainAppContent.vue'
     import Footer from '../components/Footer.vue'
     import GalleryImage from '../components/Image.vue'
+    import GoBack from '../components/GoBack.vue'
 
     export default {
         name: "Gallery",
@@ -25,7 +27,8 @@
             SidebarTwo,
             MainAppContent,
             Footer,
-            GalleryImage
+            GalleryImage,
+            GoBack
         },
         data() {
             return {

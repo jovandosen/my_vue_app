@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <GoBack />
         <SidebarOne />
         <main-app-content v-bind:componentTitle="componentTitle">
             <div id="contact-form-box">
@@ -67,6 +68,7 @@
     import MainAppContent from '../components/MainAppContent.vue'
     import Footer from '../components/Footer.vue'
     import ContactFormError from '../components/ContactFormError.vue'
+    import GoBack from '../components/GoBack.vue'
 
     export default {
         name: "Contact",
@@ -75,7 +77,8 @@
             SidebarTwo,
             MainAppContent,
             Footer,
-            ContactFormError
+            ContactFormError,
+            GoBack
         },
         data() {
             return {

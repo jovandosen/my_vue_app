@@ -93,6 +93,7 @@ const routes = [
 
 const router = new VueRouter({
     mode: 'history',
+    linkExactActiveClass: "my-vue-app-active-class",
     routes
 })
 

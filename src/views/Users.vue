@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <GoBack />
         <SidebarOne />
         <main-app-content v-bind:componentTitle="componentTitle">
             <table style="width: 100%">
@@ -21,6 +22,7 @@
     import Footer from '../components/Footer.vue'
     import UsersTableHeader from '../components/UsersTableHeader.vue'
     import UserTableRow from '../components/UserTableRow.vue'
+    import GoBack from '../components/GoBack.vue'
 
     export default {
         name: "Users",
@@ -30,7 +32,8 @@
             MainAppContent,
             Footer,
             UsersTableHeader,
-            UserTableRow
+            UserTableRow,
+            GoBack
         },
         data() {
             return {

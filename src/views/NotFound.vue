@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <GoBack />
         <SidebarOne />
         <main-app-content v-bind:componentTitle="componentTitle">
             <h3 v-bind:class="notFoundStyle">{{ content }}</h3>
@@ -14,6 +15,7 @@
     import SidebarTwo from '../components/SidebarTwo.vue'
     import MainAppContent from '../components/MainAppContent.vue'
     import Footer from '../components/Footer.vue'
+    import GoBack from '../components/GoBack.vue'
 
     export default {
         name: "NotFound",
@@ -21,7 +23,8 @@
             SidebarOne,
             SidebarTwo,
             MainAppContent,
-            Footer
+            Footer,
+            GoBack
         },
         data() {
             return {
