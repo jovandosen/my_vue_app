@@ -86,6 +86,15 @@ const routes = [
         component: () => import(/* webpackChunkName: "Post" */ "../views/Post")
     },
     {
+        path: '/user/:username',
+        name: 'User',
+        meta: {
+            title: 'User'
+        },
+        props: true,
+        component: () => import(/* webpackChunkName: "User" */ "../views/User")
+    },
+    {
         path: '*',
         name: 'NotFound',
         component: () => import(/* webpackChunkName: "NotFound" */ "../views/NotFound")

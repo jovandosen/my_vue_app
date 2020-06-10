@@ -1,5 +1,5 @@
 <template>
-    <tr v-bind:class="usersRowStyle">
+    <tr class="user-row" v-bind:class="usersRowStyle" v-on:click="getUserDetails(user.username)">
         <td>{{ user.firstName }}</td>
         <td>{{ user.lastName }}</td>
         <td>{{ user.email }}</td>
@@ -17,12 +17,17 @@
             return {
                 usersRowStyle: 'usersRowStyleClass'
             }
+        },
+        methods: {
+            getUserDetails(username) {
+                this.$router.push(`/user/${username}`)
+            }
         }
     }
 </script>
 
 <style scoped>
-td {
+.user-row td {
     border: 1px solid black;
     border-collapse: collapse;
     text-align: left;
