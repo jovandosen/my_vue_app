@@ -34,18 +34,13 @@
     import Post from './Post.vue'
     import Comment from './Comment.vue'
     import Detail from './Detail.vue'
+    import store from '../store.js'
 
     export default {
         name: "SidebarTwo",
         data() {
             return {
-                posts: [
-                    { id: 1, title: 'Foo', content: 'Foo content', author: 'John', role: 'admin' },
-                    { id: 2, title: 'Bar', content: 'Bar content', author: 'Jane', role: 'editor' },
-                    { id: 3, title: 'Baz', content: 'Baz content', author: 'Jack', role: 'admin' },
-                    { id: 4, title: 'Dev', content: 'Dev content', author: 'Jasmin', role: 'subscriber' },
-                    { id: 5, title: 'Test', content: 'Test content', author: 'Lilly', role: 'pending' }
-                ],
+                posts: store.posts,
                 comments: [
                     { id: 1, postID: 1, userID: 1, text: 'This is comment one.' },
                     { id: 2, postID: 1, userID: 2, text: 'This is comment two.' },

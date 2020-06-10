@@ -23,6 +23,7 @@
     import PostsTableHeader from '../components/PostsTableHeader.vue'
     import PostsTableRows from '../components/PostsTableRows.vue'
     import GoBack from '../components/GoBack.vue'
+    import store from '../store.js'
 
     export default {
         name: "Posts",
@@ -38,13 +39,7 @@
         data() {
             return {
                 componentTitle: "Posts",
-                posts: [
-                    { id: 1, title: 'Foo', content: 'Foo content', author: 'John', status: 'published' },
-                    { id: 2, title: 'Bar', content: 'Bar content', author: 'Jane', status: 'deleted' },
-                    { id: 3, title: 'Baz', content: 'Baz content', author: 'Jack', status: 'published' },
-                    { id: 4, title: 'Dev', content: 'Dev content', author: 'Jasmin', status: 'published' },
-                    { id: 5, title: 'Test', content: 'Test content', author: 'Lilly', status: 'pending' }
-                ]
+                posts: store.posts
             }
         }
     }

@@ -77,11 +77,12 @@ const routes = [
         component: () => import(/* webpackChunkName: "Users" */ "../views/Users")
     },
     {
-        path: '/post',
+        path: '/post/:slug',
         name: 'Post',
         meta: {
             title: 'Post'
         },
+        props: true,
         component: () => import(/* webpackChunkName: "Post" */ "../views/Post")
     },
     {
