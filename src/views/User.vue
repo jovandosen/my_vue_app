@@ -3,8 +3,17 @@
         <GoBack />
         <SidebarOne />
         <main-app-content v-bind:componentTitle="componentTitle">
-            <h4>{{ user.firstName }} {{ user.lastName }}</h4>
-            <h5>{{ user.email }}</h5>
+            <div id="user-data">
+                <div id="user-avatar">
+                    <img :src="require(`@/assets/images/users/${user.avatar}`)" :alt="user.name">
+                </div>
+                <div id="user-info">
+                    <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+                    <h3>{{ user.email }}</h3>
+                    <h4>Role: {{ user.role }}</h4>
+                    <h5>{{ user.age }} years old</h5>
+                </div>
+            </div>
         </main-app-content>
         <SidebarTwo /> 
         <Footer />      
@@ -46,3 +55,18 @@ export default {
     }
 }    
 </script>
+
+<style scoped>
+#user-avatar, #user-info {
+    float: left;
+    width: 50%;
+    height: 400px;
+}
+#user-avatar img {
+    width: 100%;
+    height: 400px;
+}  
+#user-info {
+    padding-left: 10px;
+}  
+</style>

@@ -41,18 +41,8 @@
         data() {
             return {
                 posts: store.posts,
-                comments: [
-                    { id: 1, postID: 1, userID: 1, text: 'This is comment one.' },
-                    { id: 2, postID: 1, userID: 2, text: 'This is comment two.' },
-                    { id: 3, postID: 2, userID: 2, text: 'This is comment three.' },
-                    { id: 4, postID: 3, userID: 3, text: 'This is comment four.' },
-                    { id: 5, postID: 4, userID: 4, text: 'This is comment five.' }
-                ],
-                news: [
-                    { id: 1, title: 'Test one', description: 'Test one description' },
-                    { id: 2, title: 'Test two', description: 'Test two description' },
-                    { id: 3, title: 'Test three', description: 'Test three description' }
-                ]
+                comments: store.comments,
+                news: store.news
             }
         },
         components: {
