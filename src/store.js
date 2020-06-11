@@ -1,4 +1,5 @@
 export default {
+    user: null,
     posts: [
         { id: 1, userId: 1, title: 'Foo', content: 'Foo content', author: 'John', status: 'published', slug: 'foo', image: 'equalizer.jpg' },
         { id: 2, userId: 1, title: 'Bar', content: 'Bar content', author: 'John', status: 'deleted', slug: 'bar', image: 'halloween.jpg' },

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '@/store'
 
 Vue.use(VueRouter)
 
@@ -64,7 +65,8 @@ const routes = [
         path: '/posts',
         name: 'Posts',
         meta: {
-            title: 'Posts'
+            title: 'Posts',
+            requiresAuth: true
         },
         component: () => import(/* webpackChunkName: "Posts" */ "../views/Posts")
     },
@@ -72,7 +74,8 @@ const routes = [
         path: '/users',
         name: 'Users',
         meta: {
-            title: 'Users'
+            title: 'Users',
+            requiresAuth: true
         },
         component: () => import(/* webpackChunkName: "Users" */ "../views/Users")
     },
@@ -89,7 +92,8 @@ const routes = [
         path: '/user/:username',
         name: 'User',
         meta: {
-            title: 'User'
+            title: 'User',
+            requiresAuth: true
         },
         props: true,
         component: () => import(/* webpackChunkName: "User" */ "../views/User"),
@@ -99,7 +103,8 @@ const routes = [
                 name: 'userPosts',
                 props: true,
                 meta: {
-                    title: 'User Posts'
+                    title: 'User Posts',
+                    requiresAuth: true
                 },
                 component: () => import(/* webpackChunkName: "UserPosts" */ "../views/UserPosts")
             }
@@ -122,6 +127,18 @@ router.beforeEach((toRoute, fromRoute, next) => {
     var appName = 'my_vue_app | ';
     window.document.title = toRoute.meta && toRoute.meta.title ? appName + toRoute.meta.title : appName + 'Not Found';
     next();
+})
+
+router.beforeEach((to, from, next) => {
+    if(to.matched.some(record => record.meta.requiresAuth)){
+        if(!store.user){
+            next({ name: "Login" })
+        } else {
+            next()
+        }
+    } else {
+        next()
+    }
 })
 
 export default router

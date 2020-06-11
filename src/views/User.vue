@@ -12,6 +12,7 @@
                     <h3>{{ user.email }}</h3>
                     <h4>Role: {{ user.role }}</h4>
                     <h5>{{ user.age }} years old</h5>
+                    <button id="log-out-btn" @click="logOut">Log out</button>
                     <hr v-bind:style="hrLineStyle">
                     <router-link :to="{ name: 'userPosts', params: { username: user.username } }">view posts</router-link>
                     <router-view :key="$route.path"></router-view>
@@ -59,6 +60,12 @@ export default {
                 user => user.username === this.username
             )
         }
+    },
+    methods: {
+        logOut() {
+            store.user = null
+            this.$router.push("/")
+        }
     }
 }    
 </script>
@@ -82,5 +89,13 @@ export default {
 }
 #user-info a:hover {
     text-decoration: underline;
+}
+#log-out-btn {
+    padding: 3px 7px 3px 7px;
+    margin-top: 5px;
+    color: white;
+    background-color: #808080;
+    outline: none;
+    border: 1px solid #808080;
 }
 </style>
