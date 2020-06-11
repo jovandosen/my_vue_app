@@ -1,10 +1,10 @@
 export default {
     posts: [
-        { id: 1, title: 'Foo', content: 'Foo content', author: 'John', status: 'published', slug: 'foo', image: 'equalizer.jpg' },
-        { id: 2, title: 'Bar', content: 'Bar content', author: 'Jane', status: 'deleted', slug: 'bar', image: 'halloween.jpg' },
-        { id: 3, title: 'Baz', content: 'Baz content', author: 'Jack', status: 'published', slug: 'baz', image: 'hangover.jpg' },
-        { id: 4, title: 'Dev', content: 'Dev content', author: 'Jasmin', status: 'published', slug: 'dev', image: 'inception.jpg' },
-        { id: 5, title: 'Test', content: 'Test content', author: 'Lilly', status: 'pending', slug: 'test', image: 'knight.jpg' }
+        { id: 1, userId: 1, title: 'Foo', content: 'Foo content', author: 'John', status: 'published', slug: 'foo', image: 'equalizer.jpg' },
+        { id: 2, userId: 1, title: 'Bar', content: 'Bar content', author: 'John', status: 'deleted', slug: 'bar', image: 'halloween.jpg' },
+        { id: 3, userId: 3, title: 'Baz', content: 'Baz content', author: 'Jack', status: 'published', slug: 'baz', image: 'hangover.jpg' },
+        { id: 4, userId: 4, title: 'Dev', content: 'Dev content', author: 'Jasmin', status: 'published', slug: 'dev', image: 'inception.jpg' },
+        { id: 5, userId: 5, title: 'Test', content: 'Test content', author: 'Lilly', status: 'pending', slug: 'test', image: 'knight.jpg' }
     ],
     users: [
         { id: 1, firstName: 'John', lastName: 'Doe', email: 'johndoe@gmail.com', age: 32, gender: 'Male', role: 'admin', username: 'john', avatar: 'john.jpg' },

@@ -92,7 +92,18 @@ const routes = [
             title: 'User'
         },
         props: true,
-        component: () => import(/* webpackChunkName: "User" */ "../views/User")
+        component: () => import(/* webpackChunkName: "User" */ "../views/User"),
+        children: [
+            {
+                path: 'posts',
+                name: 'userPosts',
+                props: true,
+                meta: {
+                    title: 'User Posts'
+                },
+                component: () => import(/* webpackChunkName: "UserPosts" */ "../views/UserPosts")
+            }
+        ]
     },
     {
         path: '*',

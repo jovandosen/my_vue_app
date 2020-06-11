@@ -12,6 +12,9 @@
                     <h3>{{ user.email }}</h3>
                     <h4>Role: {{ user.role }}</h4>
                     <h5>{{ user.age }} years old</h5>
+                    <hr v-bind:style="hrLineStyle">
+                    <router-link :to="{ name: 'userPosts', params: { username: user.username } }">view posts</router-link>
+                    <router-view :key="$route.path"></router-view>
                 </div>
             </div>
         </main-app-content>
@@ -37,7 +40,11 @@ export default {
     },
     data() {
         return {
-            componentTitle: "User Details"
+            componentTitle: "User Details",
+            hrLineStyle: {
+                'margin-top': '5px',
+                'margin-bottom': '5px'
+            }
         }
     },
     props: {
@@ -69,4 +76,11 @@ export default {
 #user-info {
     padding-left: 10px;
 }  
+#user-info a {
+    text-decoration: none;
+    color: black;
+}
+#user-info a:hover {
+    text-decoration: underline;
+}
 </style>
