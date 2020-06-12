@@ -120,7 +120,18 @@ const routes = [
 const router = new VueRouter({
     mode: 'history',
     linkExactActiveClass: "my-vue-app-active-class",
-    routes
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        if(savedPosition){
+            return savedPosition
+        } else {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve({ x: 0, y: 0 })
+                }, 500)
+            })
+        }
+    }
 })
 
 router.beforeEach((toRoute, fromRoute, next) => {
